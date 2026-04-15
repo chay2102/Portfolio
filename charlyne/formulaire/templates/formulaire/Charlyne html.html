@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlyne Yowa Tshikoza - Portfolio</title>
+    <link rel="stylesheet" href="{% static 'formulaire/style.css' %}">
+</head>
+<body>
+
+<!-- Header / Accueil -->
+<header class="header">
+    <h1>Charlyne Yowa Tshikoza</h1>
+    <p>Software Engineer | Graduate Student Researcher | Mental Health Advocate | Traveler</p>
+    
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <nav class="nav-menu" id="navMenu">
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Professional Experience</a>
+        <a href="#work">Work & Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact Me</a>
+    </nav>
+</header> 
+
+<!-- About Me -->
+<section id="about">
+    <h2>About Me</h2>
+    <img src="{% static 'formulaire/image/IMG_E3429.JPG' %}" alt="Yowa Tshikoza">
+    <p>My name is Charlyne Yowa Tshikoza, friends call me Chay, born on Feb 21, 1999, in Goma…</p>
+    <p>I hold a bachelor degree in Computer Science and decided to deepen my technical skills…</p>
+    <p>Along the way, I learned JavaScript, Java, React… My long-term goal is to build intelligent digital systems…</p>
+    <p>Travel is my passion, I share experiences on <a href="http://www.youtube.com/@charleychay2102/" target="_blank">YouTube</a></p>
+    <p>Social media: <a href="http://www.linktr.ee/charleychay/" target="_blank">Linktree</a></p>
+</section>
+
+<!-- Education -->
+<section id="education">
+    <h2>Educational Background</h2>
+    <table>
+        <tr>
+            <th>High School</th>
+            <th>Bachelor Degree</th>
+            <th>Masters Degree</th>
+        </tr>
+        <tr>
+            <td>Institut Maendeleo</td>
+            <td>Université Lumière de Bujumbura</td>
+            <td>Yokohama National University</td>
+        </tr>
+        <tr>
+            <td>Completed</td>
+            <td>Completed</td>
+            <td>In progress</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Professional Experience -->
+<section id="experience">
+    <h2>Professional Experience</h2>
+    <ul>
+        <li><strong>Customer Care Officer</strong> – Access Bank, Goma (April 2024 – Present)</li>
+        <li><strong>Customer Experience Agent</strong> – Access Bank, Goma (April 2024 – Dec 2025)</li>
+        <li><strong>Administrative Assistant & HR Manager</strong> – Top Five Group, Goma (April 2023 – April 2024)</li>
+        <li><strong>IT & Administrative Intern</strong> – Mike Food and Service, Kinshasa (July 2022 – Dec 2022)</li>
+        <li><strong>Networking & Programming Intern</strong> – Goma Volcanological Observatory, Goma (Jan 2022 – Apr 2022)</li>
+    </ul>
+</section>
+
+<!-- Work & Projects -->
+<section id="work">
+    <h2>Work & Projects</h2>
+    <ol>
+        <li>Implementation of a Flight Management System within an Airline</li>
+        <li>Designing a Scalable Web Intelligent System for Developing Countries</li>
+        <li>Designing an Intelligent Human-Robot Interface for Post-Stroke Rehabilitation in Low-Resource Clinics</li>
+    </ol>
+</section>
+
+<!-- Services -->
+<section id="services">
+    <h2>Services</h2>
+    <ul>
+        <li>Mobile App</li>
+        <li>Website</li>
+        <li>Web Application</li>
+        <li>Consulting</li>
+    </ul>
+</section>
+
+<!-- Contact Form -->
+<section id="contact">
+    <h2>Request a Service</h2>
+    <p>If you need software, a website, or a mobile app, please complete the form below:</p>
+
+    <form method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        {% for field in form %}
+            <div class="form-field">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
+
+        
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Charlyne Yowa Tshikoza. All rights reserved.</p>
+    <p>Follow me: <a href="http://www.linktr.ee/charleychay/" target="_blank">Linktree</a></p>
+</footer>
+
+<!-- Hamburger JS -->
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+const navLinks = document.querySelectorAll('.nav-menu a');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// ---- Country select auto-fill ----
+const countries = [
+    "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia",
+    "Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin",
+    "Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi",
+    "Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia",
+    "Congo (Congo-Brazzaville)","Congo (DRC)","Costa Rica","Croatia","Cuba","Cyprus","Czechia","Denmark","Djibouti",
+    "Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini",
+    "Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala",
+    "Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq",
+    "Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kuwait","Kyrgyzstan",
+    "Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar",
+    "Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia",
+    "Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands",
+    "New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan","Palau",
+    "Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania",
+    "Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino",
+    "Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia",
+    "Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan",
+    "Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo",
+    "Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates",
+    "United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam",
+    "Yemen","Zambia","Zimbabwe"
+];
+
+const select = document.getElementById('id_country');
+if (select){
+    select.innerHTML =  '<option value="">-- Select your country --</option>';
+
+countries.forEach(country => {
+    const option = document.createElement('option');
+    option.value = country;
+    option.textContent = country;
+    select.appendChild(option);
+});
+}
+</script>
+
+</body>
+</html>

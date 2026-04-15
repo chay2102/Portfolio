@@ -1,0 +1,300 @@
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Dark Mode */
+body {
+  background-color: #121212;
+  font-family: 'Arial', sans-serif;
+  color: #e0e0e0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: #82cfff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #1fb6ff;
+}
+
+/* Header */
+header.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(20, 30, 50, 0.85);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+
+header.header h1 {
+  font-size: 2.8em;
+  color: #82cfff;
+}
+
+header.header p {
+  font-size: 1.2em;
+  color: #b0b0b0;
+  margin-top: 10px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  background-color: #82cfff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px,-6px);
+}
+
+/* Nav Menu */
+.nav-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 40, 60, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 15px 30px;
+  z-index: 1000;
+}
+.nav-menu.active {
+  display: flex;
+}
+.nav-menu a {
+  color: #cce7ff;
+  padding: 10px 0;
+  font-size: 1.1em;
+}
+.nav-menu a:hover {
+  color: #1fb6ff;
+}
+
+/* Sections */
+section {
+  max-width: 900px;
+  margin: 120px auto 40px auto;
+  padding: 30px;
+  background: rgba(25, 35, 55, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+}
+
+/* Section Titles */
+section h2 {
+  color: #82cfff;
+  font-size: 28px;
+  margin-bottom: 20px;
+  position: relative;
+}
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #1fb6ff;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Profile Image */
+section#about img {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #1fb6ff;
+  box-shadow: 0 0 20px #1fb6ff, 0 0 40px rgba(30, 200, 255, 0.2);
+  object-fit: cover;
+}
+
+/* Education Table */
+section#education table {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+section#education table th,
+section#education table td {
+  padding: 12px 20px;
+  text-align: center;
+}
+
+section#education table th {
+  background: linear-gradient(135deg, #444, #222);
+  color: #ffcc00;
+  font-size: 1.1em;
+}
+
+section#education table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+section#education table tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+section#education table td {
+  font-size: 1em;
+}
+
+/* Forms */
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(40, 50, 70, 0.6);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+  color: #cce7ff;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #1fb6ff;
+  background-color: rgba(20, 30, 50, 0.8);
+  color: #e0e0e0;
+}
+
+form select {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Focus pour input, textarea et select */
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #82cfff;
+  box-shadow: 0 0 8px #1fb6ff;
+  outline: none;
+}
+
+/* Style options select */
+form select option {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+form select option:hover {
+  background-color: #2a2a2a;
+  color: #82cfff;
+}
+
+/* Submit Button */
+form button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  background-color: #1fb6ff;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  background-color: #0a95e0;
+}
+
+/* Footer */
+footer {
+  background: rgba(20, 30, 50, 0.9);
+  color: #cce7ff;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+}
+
+/* Lists */
+ul, ol {
+  text-align: left;
+  margin: 10px auto;
+  padding-left: 20px;
+  max-width: 800px;
+}
+
+/* Lists inside sections */
+section ul li, section ol li {
+  margin: 10px 0;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  section {
+    margin: 140px 20px 40px 20px;
+    padding: 20px;
+  }
+
+  header.header h1 {
+    font-size: 2em;
+  }
+
+  header.header p {
+    font-size: 1em;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  section#education table {
+    width: 100%;
+  }
+}

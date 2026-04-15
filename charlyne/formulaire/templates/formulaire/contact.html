@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Charlyne Yowa Tshikoza</title>
+    <link rel="stylesheet" href="{% static 'formulaire/style.css' %}">
+</head>
+<body>
+
+<header class="header">
+    <h1>Contact Me</h1>
+    <p>If you need software, a website, or a mobile app, fill out the form below:</p>
+</header>
+
+<section id="contact-form">
+    <form method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        {% for field in form %}
+            <div class="form-field">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
+
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Charlyne Yowa Tshikoza. All rights reserved.</p>
+    <p>Follow me: <a href="http://www.linktr.ee/charleychay/" target="_blank">Linktree</a></p>
+</footer>
+
+</body>
+</html>

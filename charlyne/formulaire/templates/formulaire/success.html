@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent - Charlyne Yowa Tshikoza</title>
+    <link rel="stylesheet" href="{% static 'formulaire/style.css' %}">
+</head>
+<body>
+
+<header class="header">
+    <h1>Thank You!</h1>
+</header>
+
+<section id="success-message">
+    <p>Your message has been successfully sent. I will get back to you soon!</p>
+    <a href="{% url 'portfolio' %}">Return to Portfolio</a>
+</section>
+
+<footer>
+    <p>&copy; 2025 Charlyne Yowa Tshikoza. All rights reserved.</p>
+    <p>Follow me: <a href="http://www.linktr.ee/charleychay/" target="_blank">Linktree</a></p>
+</footer>
+
+</body>
+</html>
