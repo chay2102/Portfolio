@@ -55,6 +55,12 @@ a {
     transition: 0.3s ease;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 .hero img {
     width: 160px;
     height: 160px;
