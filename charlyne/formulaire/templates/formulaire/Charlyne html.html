@@ -4,126 +4,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Charlyne Yowa Tshikoza, software developer and graduate research student in motion control, haptics and rehabilitation technology at Yokohama National University.">
     <title>Charlyne Yowa Tshikoza - Portfolio</title>
     <link rel="stylesheet" href="{% static 'formulaire/style.css' %}">
 </head>
 <body>
 
-<!-- Header / Accueil -->
-<header class="header">
-    <h1>Charlyne Yowa Tshikoza</h1>
-    <p>Software Engineer | Graduate Student Researcher | Mental Health Advocate | Traveler</p>
-    
+<header class="topbar">
+    <a href="#top" class="brand">Chay</a>
     <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
     </div>
-    
     <nav class="nav-menu" id="navMenu">
-        <a href="#about">About Me</a>
+        <a href="#about">About</a>
         <a href="#education">Education</a>
-        <a href="#experience">Professional Experience</a>
-        <a href="#work">Work & Projects</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact Me</a>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
     </nav>
-</header> 
+</header>
 
-<!-- About Me -->
-<section id="about">
+<section class="hero" id="top">
+    <img src="{% static 'formulaire/image/photo.jpg' %}" alt="Portrait of Charlyne Yowa Tshikoza">
+    <div class="hero-text">
+        <h1>Charlyne Yowa Tshikoza</h1>
+        <p class="subtitle">Software Developer | Graduate Research Student at Yokohama National University, Japan</p>
+        <div class="tags">
+            <span>Software Development</span>
+            <span>Computer Engineering</span>
+            <span>Motion Control &amp; Haptics</span>
+            <span>Research Writing &amp; Travel</span>
+        </div>
+        <a href="#projects" class="btn btn-primary">Explore my work</a>
+        <a href="#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+</section>
+
+<main>
+
+<section id="about" class="section">
     <h2>About Me</h2>
-    <img src="{% static 'formulaire/image/IMG_E3429.JPG' %}" alt="Yowa Tshikoza">
-    <p>My name is Charlyne Yowa Tshikoza, friends call me Chay, born on Feb 21, 1999, in Goma…</p>
-    <p>I hold a bachelor degree in Computer Science and decided to deepen my technical skills…</p>
-    <p>Along the way, I learned JavaScript, Java, React… My long-term goal is to build intelligent digital systems…</p>
-    <p>Travel is my passion, I share experiences on <a href="http://www.youtube.com/@charleychay2102/" target="_blank">YouTube</a></p>
-    <p>Social media: <a href="http://www.linktr.ee/charleychay/" target="_blank">Linktree</a></p>
+    <div class="card">
+        <p>I am Charlyne Yowa Tshikoza, a software developer by training and a graduate research student at Yokohama National University in Japan. Originally from Goma, Democratic Republic of the Congo, I am interested in the ways technology and engineering can respond to real human needs.</p>
+        <p>I hold a Bachelor's degree in Computer Science from Université Lumière de Bujumbura. My background combines software development, networking, IT support, administration, human resources, and customer experience.</p>
+        <p>My current academic interests include motion control, haptics, and rehabilitation technology. I am especially interested in developing accessible and practical technologies that can support people and healthcare services, including in resource-constrained environments.</p>
+        <p>Beyond technology and research, I enjoy writing, discovering new places, and sharing experiences through digital content. I also have a book in progress, <em>La plus belle course de ma vie</em>.</p>
+        <p>You can find my videos on <a href="http://www.youtube.com/@charleychay2102/" target="_blank" rel="noopener">YouTube</a> and my other platforms through <a href="http://www.linktr.ee/charleychay/" target="_blank" rel="noopener">Linktree</a>.</p>
+    </div>
 </section>
 
-<!-- Education -->
-<section id="education">
-    <h2>Educational Background</h2>
-    <table>
-        <tr>
-            <th>High School</th>
-            <th>Bachelor Degree</th>
-            <th>Masters Degree</th>
-        </tr>
-        <tr>
-            <td>Institut Maendeleo</td>
-            <td>Université Lumière de Bujumbura</td>
-            <td>Yokohama National University</td>
-        </tr>
-        <tr>
-            <td>Completed</td>
-            <td>Completed</td>
-            <td>In progress</td>
-        </tr>
-    </table>
+<section id="education" class="section">
+    <h2>Education</h2>
+    <div class="grid">
+        <div class="card">
+            <span class="badge">2018 – 2021</span>
+            <h3>Bachelor's Degree in Computer Science</h3>
+            <p>Université Lumière de Bujumbura</p>
+            <p class="muted">Completed</p>
+        </div>
+        <div class="card">
+            <span class="badge">April 2026 – Present</span>
+            <h3>Graduate Research Student</h3>
+            <p>Yokohama National University, Japan</p>
+            <p class="muted">Motion Control Laboratory</p>
+        </div>
+    </div>
 </section>
 
-<!-- Professional Experience -->
-<section id="experience">
+<section id="experience" class="section">
     <h2>Professional Experience</h2>
-    <ul>
-        <li><strong>Customer Care Officer</strong> – Access Bank, Goma (April 2024 – Present)</li>
-        <li><strong>Customer Experience Agent</strong> – Access Bank, Goma (April 2024 – Dec 2025)</li>
-        <li><strong>Administrative Assistant & HR Manager</strong> – Top Five Group, Goma (April 2023 – April 2024)</li>
-        <li><strong>IT & Administrative Intern</strong> – Mike Food and Service, Kinshasa (July 2022 – Dec 2022)</li>
-        <li><strong>Networking & Programming Intern</strong> – Goma Volcanological Observatory, Goma (Jan 2022 – Apr 2022)</li>
-    </ul>
+    <div class="timeline">
+        <div class="timeline-item">
+            <span class="badge">April 2026 – Present</span>
+            <h3>Graduate Research Student</h3>
+            <p>Motion Control Laboratory, Yokohama National University, Japan</p>
+            <p>Research interests in motion control, haptics, and rehabilitation technology.</p>
+        </div>
+        <div class="timeline-item">
+            <span class="badge">January 2025 – July 2025</span>
+            <h3>Customer Care Officer</h3>
+            <p>Access Bank, Democratic Republic of the Congo</p>
+            <p>Customer support, account opening and maintenance, and customer documentation processes.</p>
+        </div>
+        <div class="timeline-item">
+            <span class="badge">April 2024 – December 2024</span>
+            <h3>Customer Experience Agent</h3>
+            <p>Access Bank, Democratic Republic of the Congo</p>
+            <p>Customer service and support in a banking environment.</p>
+        </div>
+        <div class="timeline-item">
+            <span class="badge">April 2023 – April 2024</span>
+            <h3>Administrative Assistant &amp; Human Resources Manager</h3>
+            <p>Top Five Group, Goma, Democratic Republic of the Congo</p>
+            <p>Administrative coordination, human resources management, recruitment, and staff support.</p>
+        </div>
+        <div class="timeline-item">
+            <span class="badge">July 2022 – December 2022</span>
+            <h3>IT and Administrative Intern</h3>
+            <p>Mike Food and Service, Kinshasa, Democratic Republic of the Congo</p>
+        </div>
+        <div class="timeline-item">
+            <span class="badge">January 2022 – April 2022</span>
+            <h3>Networking and Programming Intern</h3>
+            <p>Goma Volcanological Observatory (OVG), Goma, Democratic Republic of the Congo</p>
+        </div>
+    </div>
 </section>
 
-<!-- Work & Projects -->
-<section id="work">
-    <h2>Work & Projects</h2>
-    <ol>
-        <li>Implementation of a Flight Management System within an Airline</li>
-        <li>Designing a Scalable Web Intelligent System for Developing Countries</li>
-        <li>Designing an Intelligent Human-Robot Interface for Post-Stroke Rehabilitation in Low-Resource Clinics</li>
-    </ol>
+<section id="research" class="section">
+    <h2>Research Interests</h2>
+    <div class="grid">
+        <div class="card project">
+            <h3>Motion Control</h3>
+            <p>Control systems and the study of precise, responsive movement in engineering applications.</p>
+        </div>
+        <div class="card project">
+            <h3>Haptics</h3>
+            <p>Touch-based interaction and feedback between people and technological systems.</p>
+        </div>
+        <div class="card project">
+            <h3>Rehabilitation Technology</h3>
+            <p>Exploring how engineering and intelligent systems can contribute to assistive and rehabilitation technologies.</p>
+        </div>
+    </div>
 </section>
 
-<!-- Services -->
-<section id="services">
-    <h2>Services</h2>
-    <ul>
-        <li>Mobile App</li>
-        <li>Website</li>
-        <li>Web Application</li>
-        <li>Consulting</li>
-    </ul>
+<section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="grid">
+        <div class="card project">
+            <h3>Flight Information Display System</h3>
+            <p>An academic project focused on a flight information display prototype, including user access and a human-machine interface.</p>
+        </div>
+        <div class="card project">
+            <h3>Scalable Web-Based Intelligent System</h3>
+            <p>Academic work exploring the design of a web-based intelligent system suited to practical constraints in developing environments.</p>
+        </div>
+        <div class="card project">
+            <h3>Rehabilitation and Human-Robot Interaction</h3>
+            <p>A research interest exploring interfaces and robotic assistance for rehabilitation, including approaches that can interpret a user's movement intention.</p>
+        </div>
+    </div>
 </section>
 
-<!-- Contact Form -->
-<section id="contact">
-    <h2>Request a Service</h2>
-    <p>If you need software, a website, or a mobile app, please complete the form below:</p>
-
-    <form method="post" action="{% url 'contact' %}">
-        {% csrf_token %}
-        {{ form.non_field_errors }}
-
-        {% for field in form %}
-            <div class="form-field">
-                {{ field.label_tag }}
-                {{ field }}
-                {{ field.errors }}
-            </div>
-        {% endfor %}
-
-        
-        <button type="submit">Send</button>
-    </form>
+<section id="writing" class="section">
+    <h2>Writing &amp; Creative Projects</h2>
+    <div class="card book">
+        <span class="badge">Upcoming book</span>
+        <h3><em>La plus belle course de ma vie</em></h3>
+        <p>A personal writing project currently in progress.</p>
+        <p class="muted">Status: Currently writing · Publication details coming soon</p>
+    </div>
 </section>
+
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Have a project, collaboration idea, or professional inquiry? Feel free to get in touch using the form below.</p>
+        <form method="post" action="{% url 'contact' %}">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {% for field in form %}
+                <div class="form-field">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+            {% endfor %}
+            <button type="submit">Send message</button>
+        </form>
+    </div>
+</section>
+
+</main>
 
 <footer>
-    <p>&copy; 2025 Charlyne Yowa Tshikoza. All rights reserved.</p>
-    <p>Follow me: <a href="http://www.linktr.ee/charleychay/" target="_blank">Linktree</a></p>
+    <p>&copy; 2026 Charlyne Yowa Tshikoza. All rights reserved.</p>
+    <p>Connect: <a href="http://www.linktr.ee/charleychay/" target="_blank" rel="noopener">Linktree</a> | <a href="http://www.youtube.com/@charleychay2102/" target="_blank" rel="noopener">YouTube</a></p>
 </footer>
 
-<!-- Hamburger JS -->
 <script>
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
@@ -141,7 +204,6 @@ navLinks.forEach(link => {
     });
 });
 
-// ---- Country select auto-fill ----
 const countries = [
     "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia",
     "Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin",
@@ -167,17 +229,5 @@ const countries = [
 ];
 
 const select = document.getElementById('id_country');
-if (select){
-    select.innerHTML =  '<option value="">-- Select your country --</option>';
-
-countries.forEach(country => {
-    const option = document.createElement('option');
-    option.value = country;
-    option.textContent = country;
-    select.appendChild(option);
-});
-}
-</script>
-
-</body>
-</html>
+if (select) {
+    select.innerHTML = '<option value="">-- Select your country
