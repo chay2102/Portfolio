@@ -55,10 +55,14 @@ a {
     transition: 0.3s ease;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.hero img {
+    width: 160px;
+    height: 160px;
+    max-width: none;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #f4dfe3;
+    box-shadow: 0 8px 20px rgba(73, 48, 68, 0.13);
 }
 
 h1, h2, h3, h4 {
