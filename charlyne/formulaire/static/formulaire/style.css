@@ -1,192 +1,656 @@
+/* =====================================================
+   CHARLYNE YOWA TSHIKOZA — PERSONAL PORTFOLIO
+   Elegant • Feminine • Professional
+   ===================================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* =======================
+   COLOR PALETTE
+   ======================= */
+
 :root {
-    --bg: #0f172a;
-    --bg-light: #1e3a5f;
-    --accent: #14b8a6;
-    --accent-dark: #0d9488;
-    --text: #1e293b;
-    --muted: #64748b;
-    --page: #f1f5f9;
+    --ivory: #fffaf7;
     --white: #ffffff;
+    --pink: #f4dfe3;
+    --pink-light: #fbf0f1;
+    --rose: #c98796;
+    --rose-dark: #a85f73;
+    --plum: #493044;
+    --navy: #29283f;
+    --gold: #c5a477;
+    --text: #49434a;
+    --muted: #89818a;
+    --border: #eee2e2;
+    --shadow: 0 12px 35px rgba(73, 48, 68, 0.08);
+    --radius: 18px;
 }
 
+/* =======================
+   GENERAL
+   ======================= */
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 70px;
 }
 
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--ivory);
     color: var(--text);
-    background: var(--page);
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
 a {
-    color: var(--accent-dark);
+    color: inherit;
+    text-decoration: none;
+    transition: 0.3s ease;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--plum);
+    line-height: 1.3;
+}
+
+p {
+    margin-bottom: 14px;
+}
+
+/* =======================
+   NAVIGATION
+   ======================= */
+
 .topbar {
+    width: 100%;
+    min-height: 78px;
+    padding: 15px 7%;
+    background: rgba(255, 250, 247, 0.96);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
-    z-index: 100;
-    height: 64px;
-    padding: 0 24px;
-    background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
 }
 
 .brand {
-    color: var(--white);
-    font-size: 1.3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
     font-weight: 700;
-    text-decoration: none;
+    color: var(--plum);
+    letter-spacing: 0.5px;
+}
+
+.brand:hover {
+    color: var(--rose-dark);
 }
 
 .nav-menu {
     display: flex;
-    gap: 24px;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
 }
 
 .nav-menu a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background: var(--rose);
+    transition: width 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: var(--accent);
+    color: var(--rose-dark);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
 }
 
 .hamburger {
     display: none;
-    flex-direction: column;
-    gap: 5px;
-    padding: 8px;
     cursor: pointer;
+    font-size: 27px;
+    color: var(--plum);
 }
 
-.hamburger span {
-    width: 26px;
-    height: 3px;
-    background: var(--white);
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
+/* =======================
+   HERO SECTION
+   ======================= */
 
 .hero {
-    background: linear-gradient(135deg, var(--bg), var(--bg-light));
-    color: var(--white);
-    padding: 80px 24px;
+    min-height: 580px;
+    padding: 90px 10%;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    gap: 48px;
+    justify-content: space-between;
+    gap: 55px;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(244, 223, 227, 0.65), transparent 28%),
+        linear-gradient(135deg, #fffaf7 0%, #fbf0f1 100%);
 }
 
-.hero img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
+/* Delicate decorative circles */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(197, 164, 119, 0.35);
     border-radius: 50%;
-    border: 5px solid var(--accent);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    top: -120px;
+    right: -70px;
+}
+
+.hero::after {
+    content: "✿";
+    position: absolute;
+    font-size: 95px;
+    color: rgba(201, 135, 150, 0.13);
+    bottom: 20px;
+    left: 5%;
+    pointer-events: none;
 }
 
 .hero-text {
-    max-width: 560px;
+    flex: 1;
+    max-width: 650px;
+    position: relative;
+    z-index: 1;
 }
 
-.hero h1 {
-    font-size: 2.6rem;
-    line-height: 1.2;
+.hero-text h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+}
+
+.hero-text h1 span {
+    color: var(--rose-dark);
 }
 
 .subtitle {
-    margin: 12px 0 18px;
-    color: #cbd5e1;
-    font-size: 1.1rem;
+    font-size: 17px;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 25px;
 }
+
+.hero-text p {
+    font-size: 15px;
+    max-width: 580px;
+    color: var(--text);
+}
+
+.hero img {
+    width: 300px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 48% 48% 18px 18px;
+    border: 7px solid var(--white);
+    box-shadow: 0 18px 45px rgba(73, 48, 68, 0.16);
+    position: relative;
+    z-index: 1;
+}
+
+/* =======================
+   TAGS
+   ======================= */
 
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 26px;
+    gap: 10px;
+    margin: 25px 0;
 }
 
 .tags span {
-    padding: 4px 14px;
-    border-radius: 999px;
-    background: rgba(20, 184, 166, 0.15);
-    color: #5eead4;
-    font-size: 0.85rem;
+    background: var(--white);
+    color: var(--rose-dark);
+    border: 1px solid var(--pink);
+    border-radius: 30px;
+    padding: 7px 15px;
+    font-size: 12px;
+    font-weight: 600;
 }
+
+/* =======================
+   BUTTONS
+   ======================= */
 
 .btn {
     display: inline-block;
-    margin: 0 10px 10px 0;
-    padding: 12px 26px;
-    border: 2px solid var(--accent);
-    border-radius: 8px;
+    padding: 12px 27px;
+    border-radius: 30px;
+    background: var(--plum);
+    color: var(--white);
+    font-size: 14px;
     font-weight: 600;
-    text-decoration: none;
-    transition: 0.2s;
+    border: 1px solid var(--plum);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.btn-primary {
-    background: var(--accent);
-    color: var(--bg);
+.btn:hover {
+    background: var(--rose-dark);
+    border-color: var(--rose-dark);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(168, 95, 115, 0.2);
 }
 
-.btn-primary:hover {
-    background: var(--accent-dark);
-    border-color: var(--accent-dark);
-}
-
-.btn-outline {
-    color: var(--accent);
-}
-
-.btn-outline:hover {
-    background: var(--accent);
-    color: var(--bg);
-}
+/* =======================
+   GENERAL SECTIONS
+   ======================= */
 
 .section {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 64px 24px 0;
+    padding: 85px 10%;
+    position: relative;
+}
+
+.section:nth-of-type(even) {
+    background: #fff5f5;
 }
 
 .section h2 {
-    margin-bottom: 24px;
-    font-size: 1.8rem;
-    color: var(--bg);
+    font-size: 35px;
+    margin-bottom: 35px;
+    position: relative;
+    display: inline-block;
 }
 
 .section h2::after {
     content: "";
     display: block;
-    width: 60px;
-    height: 4px;
+    width: 55px;
+    height: 3px;
+    background: var(--gold);
+    margin-top: 12px;
+    border-radius: 5px;
+}
+
+.section p {
+    font-size: 15px;
+    color: var(--text);
+}
+
+/* =======================
+   CARDS
+   ======================= */
+
+.card {
+    background: var(--white);
+    padding: 28px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(73, 48, 68, 0.12);
+}
+
+.card h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+/* =======================
+   GRID
+   ======================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* =======================
+   PROJECTS
+   ======================= */
+
+.project {
+    background: var(--white);
+    padding: 28px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    border-color: var(--pink);
+}
+
+.project h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.project p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =======================
+   WRITING / BOOK
+   ======================= */
+
+.book {
+    background: linear-gradient(135deg, #fff, #fbf0f1);
+    padding: 35px;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--gold);
+    box-shadow: var(--shadow);
+}
+
+.book h3 {
+    font-size: 27px;
+    margin-bottom: 12px;
+    color: var(--plum);
+}
+
+.book p {
+    color: var(--text);
+}
+
+/* =======================
+   MUTED TEXT & BADGES
+   ======================= */
+
+.muted {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--pink-light);
+    color: var(--rose-dark);
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    border: 1px solid var(--pink);
+}
+
+/* =======================
+   TIMELINE
+   ======================= */
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid var(--pink);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+    padding: 5px 0 5px 20px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--rose);
+    border: 3px solid var(--ivory);
+    left: -38px;
+    top: 10px;
+    box-shadow: 0 0 0 2px var(--pink);
+}
+
+.timeline-item h3 {
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.timeline-item p {
+    font-size: 14px;
+}
+
+/* =======================
+   CONTACT FORM
+   ======================= */
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--plum);
+}
+
+.form-field input,
+.form-field textarea,
+.form-field select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-field textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+    border-color: var(--rose);
+    box-shadow: 0 0 0 3px rgba(201, 135, 150, 0.12);
+}
+
+.errorlist {
+    list-style: none;
+    color: #c0395b;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+form button {
+    padding: 13px 30px;
+    background: var(--plum);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+form button:hover {
+    background: var(--rose-dark);
+    transform: translateY(-2px);
+}
+
+/* =======================
+   FOOTER
+   ======================= */
+
+footer {
+    background: var(--plum);
+    color: #f9edf0;
+    text-align: center;
+    padding: 35px 7%;
+    font-size: 13px;
+}
+
+footer p {
+    margin-bottom: 8px;
+    color: #f9edf0;
+}
+
+footer a {
+    color: #e9c5ce;
+}
+
+footer a:hover {
+    color: var(--gold);
+}
+
+/* =======================
+   RESPONSIVE DESIGN
+   ======================= */
+
+@media (max-width: 768px) {
+
+    .topbar {
+        padding: 15px 6%;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        background: var(--ivory);
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 25px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+    }
+
+    .nav-menu.active,
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 65px 7%;
+        gap: 30px;
+    }
+
+    .hero img {
+        width: 230px;
+        height: 280px;
+    }
+
+    .hero-text h1 {
+        font-size: 39px;
+    }
+
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .tags {
+        justify-content: center;
+    }
+
+    .section {
+        padding: 60px 7%;
+    }
+
+    .section h2 {
+        font-size: 29px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .project,
+    .book {
+        padding: 23px;
+    }
+
+    .hero::after {
+        font-size: 65px;
+    }
+}
+
+/* =======================
+   SMALL PHONES
+   ======================= */
+
+@media (max-width: 420px) {
+
+    .hero-text h1 {
+        font-size: 33px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .section h2 {
+        font-size: 26px;
+    }
+
+    .btn {
+        padding: 11px 22px;
+    }
+
+    .hero img {
+        width: 200px;
+        height: 245px;
+    }
+}
