@@ -1,300 +1,192 @@
-/* Reset global */
+:root {
+    --bg: #0f172a;
+    --bg-light: #1e3a5f;
+    --accent: #14b8a6;
+    --accent-dark: #0d9488;
+    --text: #1e293b;
+    --muted: #64748b;
+    --page: #f1f5f9;
+    --white: #ffffff;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* Body Dark Mode */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
 body {
-  background-color: #121212;
-  font-family: 'Arial', sans-serif;
-  color: #e0e0e0;
-  line-height: 1.6;
-  text-align: center;
+    font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    color: var(--text);
+    background: var(--page);
+    line-height: 1.7;
 }
 
-/* Links */
 a {
-  color: #82cfff;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-  color: #1fb6ff;
+    color: var(--accent-dark);
 }
 
-/* Header */
-header.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(20, 30, 50, 0.85);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  text-align: center;
-  padding: 30px 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-  z-index: 1000;
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 64px;
+    padding: 0 24px;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-header.header h1 {
-  font-size: 2.8em;
-  color: #82cfff;
+.brand {
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-header.header p {
-  font-size: 1.2em;
-  color: #b0b0b0;
-  margin-top: 10px;
-}
-
-/* Hamburger Menu */
-.hamburger {
-  position: absolute;
-  right: 20px;
-  top: 25px;
-  width: 30px;
-  height: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-.hamburger span {
-  display: block;
-  height: 4px;
-  background-color: #82cfff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px,5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px,-6px);
-}
-
-/* Nav Menu */
 .nav-menu {
-  display: none;
-  position: absolute;
-  top: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(30, 40, 60, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  flex-direction: column;
-  padding: 15px 30px;
-  z-index: 1000;
+    display: flex;
+    gap: 24px;
 }
-.nav-menu.active {
-  display: flex;
-}
+
 .nav-menu a {
-  color: #cce7ff;
-  padding: 10px 0;
-  font-size: 1.1em;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
 }
+
 .nav-menu a:hover {
-  color: #1fb6ff;
+    color: var(--accent);
 }
 
-/* Sections */
-section {
-  max-width: 900px;
-  margin: 120px auto 40px auto;
-  padding: 30px;
-  background: rgba(25, 35, 55, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    cursor: pointer;
 }
 
-/* Section Titles */
-section h2 {
-  color: #82cfff;
-  font-size: 28px;
-  margin-bottom: 20px;
-  position: relative;
-}
-section h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: #1fb6ff;
-  margin: 10px auto 0 auto;
-  border-radius: 2px;
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: 0.3s;
 }
 
-/* Profile Image */
-section#about img {
-  display: block;
-  margin: 20px auto;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 4px solid #1fb6ff;
-  box-shadow: 0 0 20px #1fb6ff, 0 0 40px rgba(30, 200, 255, 0.2);
-  object-fit: cover;
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
 
-/* Education Table */
-section#education table {
-  width: 80%;
-  max-width: 800px;
-  margin: 20px auto;
-  border-collapse: collapse;
-  background-color: rgba(30, 30, 30, 0.8);
-  color: #fff;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-  border-radius: 10px;
-  overflow: hidden;
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
 }
 
-section#education table th,
-section#education table td {
-  padding: 12px 20px;
-  text-align: center;
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-section#education table th {
-  background: linear-gradient(135deg, #444, #222);
-  color: #ffcc00;
-  font-size: 1.1em;
+.hero {
+    background: linear-gradient(135deg, var(--bg), var(--bg-light));
+    color: var(--white);
+    padding: 80px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
 }
 
-section#education table tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.05);
+.hero img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-section#education table tr:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  cursor: pointer;
+.hero-text {
+    max-width: 560px;
 }
 
-section#education table td {
-  font-size: 1em;
+.hero h1 {
+    font-size: 2.6rem;
+    line-height: 1.2;
 }
 
-/* Forms */
-form {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 30px;
-  border-radius: 15px;
-  background: rgba(40, 50, 70, 0.6);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+.subtitle {
+    margin: 12px 0 18px;
+    color: #cbd5e1;
+    font-size: 1.1rem;
 }
 
-form label {
-  display: block;
-  margin-top: 15px;
-  color: #cce7ff;
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 26px;
 }
 
-form input,
-form textarea,
-form select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 5px;
-  border-radius: 8px;
-  border: 1px solid #1fb6ff;
-  background-color: rgba(20, 30, 50, 0.8);
-  color: #e0e0e0;
+.tags span {
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: rgba(20, 184, 166, 0.15);
+    color: #5eead4;
+    font-size: 0.85rem;
 }
 
-form select {
-  cursor: pointer;
-  transition: 0.3s;
+.btn {
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    padding: 12px 26px;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
-/* Focus pour input, textarea et select */
-form input:focus,
-form textarea:focus,
-form select:focus {
-  border-color: #82cfff;
-  box-shadow: 0 0 8px #1fb6ff;
-  outline: none;
+.btn-primary {
+    background: var(--accent);
+    color: var(--bg);
 }
 
-/* Style options select */
-form select option {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
-}
-form select option:hover {
-  background-color: #2a2a2a;
-  color: #82cfff;
+.btn-primary:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
 }
 
-/* Submit Button */
-form button {
-  margin-top: 20px;
-  padding: 12px 20px;
-  border: none;
-  background-color: #1fb6ff;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-form button:hover {
-  background-color: #0a95e0;
+.btn-outline {
+    color: var(--accent);
 }
 
-/* Footer */
-footer {
-  background: rgba(20, 30, 50, 0.9);
-  color: #cce7ff;
-  text-align: center;
-  padding: 25px;
-  margin-top: 40px;
-  box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+.btn-outline:hover {
+    background: var(--accent);
+    color: var(--bg);
 }
 
-/* Lists */
-ul, ol {
-  text-align: left;
-  margin: 10px auto;
-  padding-left: 20px;
-  max-width: 800px;
+.section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 64px 24px 0;
 }
 
-/* Lists inside sections */
-section ul li, section ol li {
-  margin: 10px 0;
+.section h2 {
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+    color: var(--bg);
 }
 
-/* Responsive */
-@media(max-width: 768px) {
-  section {
-    margin: 140px 20px 40px 20px;
-    padding: 20px;
-  }
-
-  header.header h1 {
-    font-size: 2em;
-  }
-
-  header.header p {
-    font-size: 1em;
-  }
-
-  form {
-    padding: 20px;
-  }
-
-  section#education table {
-    width: 100%;
-  }
-}
+.section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
